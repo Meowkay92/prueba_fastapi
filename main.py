@@ -17,11 +17,31 @@ class Cliente(BaseModel):
     """
 
     nome: str
+    """
+        nome como texto: ex: "Cleberton Silva"
+    """
+
     idade: int
+    """
+       idade deve ser passada como um numero inteiro => ex: 31.
+    """
+
     email: str
+    """
+       recebe email como texto => ex: cleber@cleber.com
+    """
     telefone: str
+    """
+       telefone de contato do cliente => ex: 01234567890
+    """
     cidade: str
+    """
+       cliente deve inserir a cidade ONDE RESIDE
+    """
     salario: float
+    """
+       salario do cliente pode ser recebido como numero decima => ex: 1789.55
+    """
 
 clientes = []
 

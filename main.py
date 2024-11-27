@@ -40,10 +40,13 @@ class Cliente(BaseModel):
     """
     salario: float
     """
-       salario do cliente pode ser recebido como numero decima => ex: 1789.55
+       salario do cliente pode ser recebido como numero decimal => ex: 1789.55
     """
 
 clientes = []
+"""
+   inicia lista vazia para
+"""
 
 @app.get("/")
 def root():
@@ -75,3 +78,5 @@ def cadastrar_cliente(cliente: Cliente):
     """
     clientes.append(cliente)
     return {"mensagem": "Cliente cadastrado com sucesso!", "cliente": cliente}
+
+

@@ -7,13 +7,15 @@ app = FastAPI()
 class Cliente(BaseModel):
     """ Modelo de dados para um cadastro simples de clientes no sistema ficticio
 
-    atributos:
-    nome: str => O nome completo do cliente
-    idade: int => a idade do cliente em anos como numero inteiro
-    email: str => recebe o email do cliente
-    telefone: str => telefone do cliente
-    cidade: str =>  cidade onde o cliente reside
-    salario: float => salario atual ou ultimo salario do cliente como decimal
+    exemplo de dados esperados
+    
+        "nome": "Cleberton Silva",
+        "idade": 32,
+        "email": "cleberton@cleberton",
+        "telefone": "111234567890",
+        "cidade": "São Paulo",
+        "salario": 2540.50
+    
     """
 
     nome: str
@@ -36,7 +38,7 @@ class Cliente(BaseModel):
     """
     cidade: str
     """
-       cliente deve inserir a cidade ONDE RESIDE
+       cliente deve inserir a cidade ONDE RESIDE como texto
     """
     salario: float
     """
@@ -54,7 +56,7 @@ def root():
         Endpoint de boas-vindas.
         Retorna mensagem de boas vindas quando acessado
     """
-    return {"Bem-vindo a API de clientes"}
+    return {"message": "Bem-vindo a API de clientes"}
 
 @app.get("/clientes", response_model=List[Cliente])
 def get_clientes():
